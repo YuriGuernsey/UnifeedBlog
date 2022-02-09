@@ -83,6 +83,22 @@
 <script>
 $('.hmbMenu').click(function(){
    $('ul').toggle(); 
-})
+});
+    (function() {
+    var n = window['notifo'] || (window['notifo'] = []);
+    n.push(['set', 'api-key', '<YOUR API KEY>']);
+    n.push(['set', 'user-id', '<YOUR USER ID>']);
+    n.push(['set', 'user-token', '<YOUR USER ID>']); <!-- Optional user token instead of api key + use id -->
+    n.push(['set', 'user-name', '<YOUR USER DISPLAY NAME> (Optional)`);
+    n.push(['set', 'user-email', '<YOUR USER EMAIL> (Optional)`);
+    n.push(['ui', 'button']);
+    n.push(['subscribe']);
+
+    var s = document.createElement('script');
+    s.src = 'https://app.notifo.io/build/notifo-sdk.js';
+    s.async = true;
+    document.body.appendChild(s);
+})();
+    
 </script>
 </html>
